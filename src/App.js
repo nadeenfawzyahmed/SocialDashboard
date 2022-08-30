@@ -1,5 +1,8 @@
 import logo from './logo.svg';
+import React ,{useEffect,useState}
+ from "react";
 import './App.css';
+
 import {
   AiFillFacebook,
   AiOutlineTwitter,
@@ -13,6 +16,9 @@ import Usetheme from './hooks/Usetheme'
 
 function App() {
   const {darkmode,handlecheckchange}=Usetheme();
+  const [isShown, setIsShown] = useState(false);
+  
+
   
   return (
     <div className={ darkmode&&"dark"}>
@@ -44,7 +50,8 @@ function App() {
         {/*MAINCARDs*/}
         <div className=' grid grid-cols-1  md:grid-cols-4 gap-8 '>
           {/*card*/}
-          <div className="card before:bg-sky-500">
+
+          <div className="card before:bg-sky-500 " >
             <div className="flex items-center justify-center gap-1 font-bold pb-6">
               <span className="text-facebook">
                 <AiFillFacebook size={22} />
@@ -62,6 +69,7 @@ function App() {
               <span>Today</span>
             </div>
           </div>
+          
           {/*card*/}
           <div className="card before:bg-sky-500">
             <div className="flex items-center justify-center gap-1 font-bold pb-6">
@@ -159,6 +167,7 @@ function App() {
       </div>
 
     </div>
+    
     </div>
 
   );
